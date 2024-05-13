@@ -1,0 +1,193 @@
+@use 'index.scss' as *;
+:root{
+  font-size:62.5%;
+}
+body{
+  background-image:url('/public/image/Grid.png');
+  width:100%;
+  background-color:$color-020617;
+}
+body, html{
+  font-size:1.4rem;
+}
+*{
+  box-sizing:border-box;
+  outline:medium none;
+  text-decoration:none;
+  @extend .m-0, .p-0;
+}
+
+img{
+  max-width:100%;
+  border:0;
+  vertical-align:middle;
+  width:100%;
+  height:100%;
+}
+
+a{
+  text-decoration:none;
+  border:0;
+  outline:none;
+  cursor:pointer;
+  &:hover, &:active, &:visited, &:focus{
+    text-decoration:none;
+    outline:0 none;
+  }
+}
+
+ul, ol, li, fieldset{
+  list-style:none;
+  @extend .p-0, .m-0;
+  background:none;
+  border:0;
+}
+
+body{
+  margin:0 auto;
+  -webkit-overflow-scrolling:touch;
+  touch-action:manipulation;
+  -moz-osx-font-smoothing:grayscale;
+  -webkit-font-smoothing:antialiased;
+}
+
+hr{
+  border:none;
+}
+
+body, input, textarea, select, button{
+  text-rendering:optimizeSpeed;
+  font-family:'Poppins';
+  -webkit-tap-highlight-color:transparent;
+}
+
+/* Ripple effect */
+.ripple{
+  @include position(relative);
+  overflow:hidden;
+  &:after{
+    content:"";
+    display:block;
+    @include position(absolute, $top: 0, $left: 0);
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    background-image:radial-gradient(circle, $color-000000 10%, transparent 10.01%);
+    background-repeat:no-repeat;
+    background-position:50%;
+    transform:scale(10, 10);
+    opacity:0;
+    @include transition(transform .5s, opacity 1s);
+  }
+  &:active{
+    &:after{
+      transform:scale(0, 0);
+      opacity:.2;
+      transition:0s;
+    }
+  }
+}
+// button
+.button{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border:0;
+  background:transparent;
+  cursor:pointer;
+  @include border-radius(2rem);
+  @include transition(all .3s linear);
+  @extend .ripple;
+  width:100%;
+  font-size:1.4rem;
+  color:$color-ffffff;
+  height:4rem;
+  // flex:1 1 100%;
+  &:hover{
+    opacity:.9;
+  }
+  &--primary{
+    background:linear-gradient(205.14deg, $color-3F37C9 30.04%, $color-4CC9F0 186.57%);
+  }
+  &--white{
+    background-color:$color-ffffff;
+    color:$color-0E0D0D;
+  }
+  &--transparent{
+    background-color:transparent;
+  }
+  &--text{
+    display:none;
+    @include for-ipad{
+      display:block;
+    }
+  }
+}
+
+.fw300{font-weight:300}
+.fw400{font-weight:400}
+.fw500{font-weight:500}
+.fw600{font-weight:600}
+.fw700{font-weight:700}
+
+// icon css
+.icon{
+  display:inline-block;
+  background-size:100% 100%;
+  background-position:center;
+  background-repeat:no-repeat;
+  cursor:pointer;
+  flex:0 0 2.4rem;
+  width:2.4rem;
+  height:2.4rem;
+  &--rightblack{
+    background-image:url('/public/image/Arrow_alt_lright_alt_black.svg');
+  }
+  &--hamburger{
+    background-image:url('/public/image/hamburger.svg');
+    width:3.2rem;
+    height:3.2rem;
+  }
+  &--rightwhite{
+    background-image:url('/public/image/Arrow_alt_lright_alt_white.svg');
+  }
+  &--telegram{
+    background-image:url('/public/image/telegram.svg');
+  }
+}
+
+.dn{
+  display:none;
+}
+.dblock{
+  display:block;
+}
+.main{
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  width:100%;
+  margin:0 auto;
+  &__inner{
+    max-width:1440px;
+    width:100%;
+    margin:0 auto;
+  }
+}
+.section{
+  opacity:0;
+  @include for-ipad{
+    // height:100svh;
+  }
+  &__overlay{
+    background-image:url('/public/image/Overlay.png');
+    width:100%;
+    height:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+  }
+}
+.fadein{
+  @include fadeIn;
+}

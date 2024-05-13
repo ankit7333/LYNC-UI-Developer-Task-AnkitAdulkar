@@ -1,0 +1,225 @@
+@use '../../styles/index.scss' as *;
+
+.sdk{
+    margin:10rem auto;
+    padding:0 2rem;
+    width:100%;
+    @include for-desktop{
+        max-width:1200px;
+    }
+    p{
+        color:$color-ffffff;
+        font-size:1.6rem;
+        margin:1rem auto 4rem;
+        text-align:center;
+        max-width:55.3rem;
+
+    }
+}
+.card{
+    background: linear-gradient(92.98deg, rgba(217, 217, 217, 0.07) 32.09%, rgba(217, 217, 217, 0.05) 116.98%);
+    background-color:$color-1E153D;
+    border:.1rem solid rgba(225,225,225, .2);
+    // background-image:url('/public/image/Card.svg');
+    // background-repeat:no-repeat;
+    // background-size:100% 100%;
+    // background-position:center;
+    margin-bottom:4rem;
+    position:relative;
+    width:100%;
+    @include border-radius(2rem);
+    padding:2rem;
+    @include for-ipad{
+        padding:5rem;
+        margin-bottom:6.5rem;
+    }
+    h6{
+        color:$color-ffffff;
+        font-size:1.6rem;
+        margin-bottom:1rem;
+        @include for-ipad{
+            font-size:1.8rem;
+        }
+        span{
+            background-image:linear-gradient(94.68deg, #6F00DD99 2.51%, #7209B7 56.42%); /* Gradient colors */
+            -webkit-background-clip:text; /* For webkit browsers */
+            background-clip:text; /* Standard property */
+            color:transparent; /* Make the text transparent */
+        }
+    }
+    li{
+        color:$color-ffffff;
+        font-size:1rem;
+        font-weight:500;
+        display:flex;
+        align-items:flex-start;
+        @include for-ipad{
+            font-size:1.8rem;
+            align-items:center;
+        }
+        &::before{
+            content:'';
+            background-image:url('/public/image/star.svg');
+            width:1.8rem;
+            height:1.8rem;
+            background-position:center;
+            background-repeat:no-repeat;
+            background-size:100% 100%;
+            flex:0 0 1.8rem;
+            margin-right:1rem;
+            @include for-ipad{
+                width:2.1rem;
+                height:2.1rem;
+                flex-basis:2.1rem;
+            }
+        }       
+        &:not(:last-child){
+            margin-bottom:.5rem;
+            @include for-ipad{
+                margin-bottom:1.5rem;
+            }
+        }
+    }
+    &__1{
+        @extend .card;
+        display:flex;
+        align-items:center;
+        padding:3rem 2rem;
+    }
+    &__left{
+        flex:0 1 70%;
+        z-index:1;
+        h6{
+            color:$color-ffffff;
+            font-size:1.6rem;
+            margin-bottom:0;
+            @include for-ipad{
+                font-size:2.4rem;
+            }
+        }
+        .para{
+            color:$color-8D96B2;
+            font-size:1rem;
+            margin:1.5rem 0 2rem;
+            @include for-ipad{
+                font-size:1.6rem;
+            }
+        }
+        :global(.button--white){
+            max-width:10.3rem;
+            width:100%;
+        }
+    }
+    &__right{
+        img{
+            width:15.0rem;
+            height:15.0rem;
+            @include position(absolute, $top:3.5rem, $right:0);
+        }
+    }
+    &__wrap{
+        @include for-desktop{
+            display:flex;
+        }
+        @include for-desktop{
+            gap:1rem;
+            .card__1{
+                flex:1 1 40%;
+                margin-bottom:0;
+            }
+            .card__grid{
+                flex:1 1 60%;
+            }
+        }
+    }
+    &__grid{
+        @include for-ipad{
+            display:grid; 
+            grid-template-rows:1fr 1fr;
+            grid-template-columns:1fr 1fr 1fr;
+            gap:1rem;
+            height:100%;
+        }
+        .card{
+            &__2{
+                @extend .card;
+                @include for-ipad{
+                    grid-row-start:1;
+                    grid-column-start:1;
+                    grid-row-end:2;
+                    grid-column-end:2;
+                    margin-bottom:0;
+                    padding:2rem;
+                }
+                h6{
+                    background-image:linear-gradient(205.14deg, #3F37C9 30.04%, #4CC9F0 186.57%); /* Gradient colors */
+                    -webkit-background-clip:text; /* For webkit browsers */
+                    background-clip:text; /* Standard property */
+                    color:transparent; /* Make the text transparent */
+                    font-size:3.8rem;
+                    margin-bottom:0;
+                }
+            }
+            &__3{
+                display:flex;
+                height:25.0rem;
+                position:relative;
+                @include for-ipad{
+                    height:auto;
+                    grid-row-start:1;
+                    grid-column-start:2;
+                    grid-row-end:3;
+                    grid-column-end:4;
+                }
+                .left{
+                    flex:0 1 65%;
+                }
+                .right{
+                    img{
+                        @include position(absolute, $right:0, $bottom:0);
+                        width:17.5rem;
+                        height:18.3rem;
+                        @include for-ipad{
+                            width:30.3rem;
+                            height:31.3rem;
+                        }
+                    }
+                }
+            }
+            &__4{
+                @extend .card;
+                grid-row-start:2;
+                grid-column-start:1;
+                grid-row-end:3;
+                grid-column-end:2;
+                padding:2rem;
+                margin-bottom:0;
+                h6{
+                    background-image:linear-gradient(94.68deg, #FF0276 2.51%, #7209B7 56.42%);;
+                    -webkit-background-clip:text; /* For webkit browsers */
+                    background-clip:text; /* Standard property */
+                    color:transparent; /* Make the text transparent */
+                    font-size:3.8rem;
+                    margin-bottom:0;
+                }
+            }
+        }
+    }
+}
+.diamond{
+    background-image:url('/public/image/Eth_animation.svg');
+    background-position:center;
+    background-size:100% 100%;
+    background-repeat:no-repeat;
+    @include position(absolute, $top:-5rem, $right:-2.5rem);
+    width:48.0rem;
+    height:53.0rem;
+    display:none;
+    @include for-desktop{
+        display:block;
+    }
+}
+.content{
+    color:$color-8D96B2;
+    font-size:1.6rem;
+}

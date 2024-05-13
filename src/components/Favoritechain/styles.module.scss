@@ -1,0 +1,34 @@
+@use '../../styles/index.scss' as *;
+
+.favoritechain{
+    display:flex;
+    padding:0 2rem;
+    width:100%;
+    margin:5rem auto 2rem;
+    flex-direction:column;
+    ul{
+        display:flex;
+        gap:2rem;
+        flex-wrap:wrap;
+        @include for-mobile{
+            gap:1rem;
+        }
+        li{
+            padding:2rem;
+            color:$color-ffffff;
+            flex:1 1 45%;
+            @include for-ipad{
+                flex-basis:23%;
+            }
+        }
+        a{
+            img{
+                transform:scale(1);
+                @include transition(all .2s linear);
+            }
+            &:hover img{
+                transform: scale(1.2);
+            }
+        }
+    }
+}

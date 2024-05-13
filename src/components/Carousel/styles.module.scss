@@ -1,0 +1,23 @@
+@use '../../styles/index.scss' as *;
+
+.slide{
+    @include border-radius(2rem);
+    overflow:hidden;
+    :global(.button--white){
+        max-width:10rem;
+    }
+    &__bottom{
+        background:linear-gradient(92.98deg, rgba(217, 217, 217, 0.07) 32.09%, rgba(217, 217, 217, 0.05) 116.98%);
+        background-color:$color-1E153D;
+        padding:2rem;
+    }
+    &__title{
+        color:$color-ffffff;
+        font-size:1.6rem;
+    }
+    &__content{
+        color:$color-8D96B2;
+        font-size:1.4rem;
+        padding:1.5rem 0;
+    }    
+}

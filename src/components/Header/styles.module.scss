@@ -1,0 +1,42 @@
+@use '../../styles/index.scss' as *;
+
+.header{
+    &__bg{
+        // background-image:url('/public/image/headerbg.png');
+        // background-repeat:no-repeat;
+        padding:2rem 0;
+        background: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.3)), 
+                /* Image URL */
+                url('/public/image/headerbg.png') center/100% no-repeat;
+    }
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background-color:$color-1E153D;
+    border:.1rem solid rgba(225,225,225, .2);
+    @include border-radius(4.8rem);
+    padding:2rem;
+    margin:0 2rem;
+    &__left{
+        @extend .header;
+        @include border-radius(0);
+        border:none;
+        flex:0 1 55%;
+        padding:0;
+        margin:0;
+        @include for-ipad{
+            flex-basis:52%;
+        }
+        @include for-desktop{
+            flex-direction:row-reverse;
+            flex-basis:72%;
+        }
+    }
+    :global(.button--white){
+        width:5.2rem;
+        height:4rem;
+        @include for-ipad{
+            width:13.1rem;
+        }
+    }
+}

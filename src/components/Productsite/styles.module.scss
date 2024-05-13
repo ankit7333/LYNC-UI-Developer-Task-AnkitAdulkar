@@ -1,0 +1,50 @@
+@use '../../styles/index.scss' as *;
+
+.productsite{
+    display:flex;
+    padding:0 2rem;
+    width:100%;
+    margin:5rem auto 2rem;
+    flex-direction:column;
+    ul{
+        display:flex;
+        gap:3rem;
+        flex-wrap:wrap;
+        @include for-mobile{
+            gap:1rem;
+        }
+        li{
+            padding:2.2rem;
+            color:$color-ffffff;
+            flex:1 1 100%;
+            background:linear-gradient(180deg, rgba(2, 6, 23, .2) 16.98%, rgba(2, 6, 23, 1) 66.5%);
+            @include border-radius(2rem);
+            @include for-mobile{
+                background:transparent;
+                padding:0;
+            }
+            @include for-ipad{
+                flex-basis:45%;
+            }
+            @include for-desktop{
+                flex-basis:30%;
+            }
+            img{
+                display:none;
+                @include for-ipad{
+                    display:inline-block;
+                }
+            }
+            figcaption{
+                font-size:1.8rem;
+                margin-bottom:.5rem;
+                @include for-ipad{
+                    font-size:2.4rem;
+                }
+            }
+            > span{
+                color:$color-8D96B2;
+            }
+        }
+    }
+}

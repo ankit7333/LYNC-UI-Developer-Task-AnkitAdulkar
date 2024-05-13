@@ -1,0 +1,63 @@
+@use '../../styles/index.scss' as *;
+
+.nav{
+    ul{
+        @include position(absolute, $left:1rem, $top:2rem);
+        background-color:$color-010412;
+        @include border-radius(3.2rem);
+        padding:2rem;
+        width:calc(100% - 2rem);
+        z-index:2;        
+        flex-direction:column;
+        align-items:center;
+        &:global(:not(.dn)){
+            display:flex;
+        }
+        @include for-desktop{
+            background-color:transparent;
+            flex-direction:row;
+            @include position(static);
+            padding:0;
+            gap:0 3rem;
+            width:100%;
+            &:global(.dn){
+                display:flex;
+            }
+        }
+        li{    
+            > *{
+                font-size:2.4rem;
+                color:$color-ffffff;
+                padding:1.2rem 0;
+                display:block;
+                &:hover{
+                    opacity:.8;
+                    @include transition(all .2s linear)
+                }
+                @include for-desktop{
+                    font-size:1.6rem;
+                    padding:0;
+                }
+            }
+            @include for-ipad{
+                &:last-child{
+                    display:none;
+                }
+            }
+        }
+    }
+    :global(.icon--hamburger){
+        display:inline-block;
+        @include for-desktop{
+            display:none;
+        }
+    }
+    :global(.close){
+        color:$color-8D96B2;
+        @include border-radius(0);
+        height:auto;
+        @include for-desktop{
+            display:none;
+        }
+    }
+}

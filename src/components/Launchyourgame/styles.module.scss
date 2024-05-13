@@ -1,0 +1,53 @@
+@use '../../styles/index.scss' as *;
+
+.launchyourgame{
+    text-align:center;
+    background-image:url('/public/image/BG_Pattern.svg');
+    background-position:top center;
+    background-size:cover;
+    background-repeat:no-repeat;
+    padding:2rem 2rem 0;
+    @include for-ipad{
+        padding:0;
+        margin-top:2rem;
+    }
+    &__inner{
+        width:90%;
+        margin:0 auto;
+        @include for-ipad{
+            width:49%;
+            margin-top:5rem;
+            padding-bottom:15rem;
+        }
+    }
+    h4{
+        font-size:3.8rem;
+        color:$color-ffffff;
+        @include fadeInUp;
+        > span{
+            background-image:linear-gradient(to right, $color-FF0276, $color-7209B7); /* Gradient colors */
+            -webkit-background-clip:text; /* For webkit browsers */
+            background-clip:text; /* Standard property */
+            color:transparent; /* Make the text transparent */
+        }
+    }
+    p{
+        color:$color-ffffff;
+        @include fadeInUp;
+        margin:2.3rem 0 2.5rem;
+    }
+}
+.btnwrap{
+    @include fadeInUp;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:2rem;
+    flex-direction:column;
+    @include for-ipad{
+        flex-direction:row;
+        :global(.button){
+            width:14.8rem;
+        }
+    }
+}

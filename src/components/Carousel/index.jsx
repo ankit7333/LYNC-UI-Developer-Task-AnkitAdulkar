@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import Button from '../Button'
 import styles from './styles.module.scss'
-import CustomSwiper from '../../styles/CustomSwiper.scss'
+import '../../styles/CustomSwiper.scss'
 
 const blogs = [
     {

@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 // import required modules
 import { Navigation } from 'swiper/modules';
 import styles from './styles.module.scss'
-import CustomSwiper from '../../styles/CustomSwiper.scss'
+import '../../styles/CustomSwiper.scss'
 
 const reviews = [
     {

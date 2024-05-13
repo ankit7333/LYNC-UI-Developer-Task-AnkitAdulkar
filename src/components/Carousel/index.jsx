@@ -57,7 +57,7 @@ export default function Carousel() {
             blogs.map((blog) => {
                 return <SwiperSlide key={blog.title}>
                     <div className={styles.slide}>
-                        <div className={styles.slide__top}><img src={blog.image} /></div>
+                        <div className={styles.slide__top}><img src={blog.image} alt={blog.title} /></div>
                         <div className={styles.slide__bottom}>
                             <div className={styles.slide__title}>{blog.title}</div>
                             <div className={styles.slide__content}>{blog.content}</div>
